@@ -1,0 +1,84 @@
+-- Test helpers, created inside each test's transaction and rolled back with it.
+-- Include from a test with: \ir helpers/act_as.psql
+
+create schema if not exists tests;
+grant usage on schema tests to anon, authenticated;
+
+-- Creates an auth user (which creates the profile) and names the profile.
+create or replace function tests.make_user(p_handle text, p_age interval default interval '0 days')
+returns uuid
+language plpgsql
+as $$
+declare
+  v_id uuid;
+begin
+  insert into auth.users (phone) values ('+63917' || lpad((floor(random() * 10000000))::text, 7, '0'))
+  returning id into v_id;
+  update public.profiles
+  set handle = p_handle, created_at = now() - p_age
+  where id = v_id;
+  return v_id;
+end;
+$$;
+
+-- Security definer so it still finds people the current test user has blocked.
+create or replace function tests.uid(p_handle text)
+returns uuid
+language sql
+stable
+security definer
+set search_path = ''
+as $$
+  select id from public.profiles where handle = p_handle;
+$$;
+
+-- Become a signed in user for the rest of the transaction (or until the next call).
+create or replace function tests.act_as(p_handle text)
+returns void
+language plpgsql
+as $$
+declare
+  v_id uuid := tests.uid(p_handle);
+begin
+  if v_id is null then
+    raise exception 'no test user %', p_handle;
+  end if;
+  perform set_config('role', 'authenticated', true);
+  perform set_config('request.jwt.claims', json_build_object('sub', v_id, 'role', 'authenticated')::text, true);
+end;
+$$;
+
+create or replace function tests.act_as_anon()
+returns void
+language plpgsql
+as $$
+begin
+  perform set_config('role', 'anon', true);
+  perform set_config('request.jwt.claims', '{"role":"anon"}', true);
+end;
+$$;
+
+-- Back to the superuser that runs the test, for setup between checks.
+create or replace function tests.act_as_postgres()
+returns void
+language plpgsql
+as $$
+begin
+  perform set_config('role', 'postgres', true);
+  perform set_config('request.jwt.claims', '', true);
+end;
+$$;
+
+-- Distance in meters between two lat/lng pairs.
+create or replace function tests.meters(a_lat float8, a_lng float8, b_lat float8, b_lng float8)
+returns float8
+language sql
+immutable
+as $$
+  select extensions.st_distance(
+    extensions.st_setsrid(extensions.st_makepoint(a_lng, a_lat), 4326)::extensions.geography,
+    extensions.st_setsrid(extensions.st_makepoint(b_lng, b_lat), 4326)::extensions.geography
+  );
+$$;
+
+grant execute on all functions in schema tests to anon, authenticated;

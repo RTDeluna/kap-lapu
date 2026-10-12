@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="tl">
+<head>
+<meta charset="utf-8">
+<title>Laot map</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0b6b75}a:hover{color:#10303a}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #bfe1e0; font-family: Figtree, system-ui, sans-serif; color: #10303a">
+  <svg width="390" height="844" viewBox="0 0 390 844" aria-hidden="true" style="position: absolute; left: 0; top: 0">
+    <path d="M0 0 H390 V318 C352 330 330 372 312 420 C296 462 262 476 238 446 C214 414 186 404 162 428 C130 462 92 478 58 452 C34 434 14 440 0 452 Z" fill="#f2e9d8" stroke="#e3d7c3" stroke-width="2"/>
+    <path d="M300 640 C318 626 346 630 352 648 C358 666 338 680 318 676 C300 672 290 654 300 640 Z" fill="#f2e9d8" stroke="#e3d7c3" stroke-width="2"/>
+    <path d="M40 210 C90 190 120 230 170 220 C220 210 250 170 300 190" fill="none" stroke="#e3d7c3" stroke-width="6" stroke-linecap="round"/>
+    <path d="M0 520 C40 512 70 512 110 520 S180 528 220 520" fill="none" stroke="#d3ecea" stroke-width="3" stroke-linecap="round"/>
+    <path d="M150 600 C190 592 220 592 260 600 S330 608 370 600" fill="none" stroke="#d3ecea" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <div style="position: absolute; left: 196px; top: 470px; font-size: 12px; font-weight: 600; color: #3f6f73; letter-spacing: 0.4px">Mariveles Bay</div>
+  <div style="position: absolute; left: 56px; top: 250px; font-size: 12px; font-weight: 600; color: #8c7e68">Mariveles</div>
+
+  <div style="position: absolute; left: 16px; right: 16px; top: 16px; display: flex; flex-direction: column; gap: 10px">
+    <div style="display: flex; gap: 8px; align-items: center">
+      <label style="flex: 1; display: flex; align-items: center; gap: 10px; height: 52px; padding: 0 16px; background: #ffffff; border-radius: 14px; box-shadow: 0 1px 2px rgba(16,48,58,0.08), 0 6px 16px rgba(16,48,58,0.08)">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#56676a" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="6.5"></circle><path d="M16 16l4 4"></path></svg>
+        <input type="search" placeholder="Saan tayo mangingisda?" aria-label="Search spots and boats" style="border: 0; outline: none; background: transparent; font: inherit; font-size: 16px; color: #10303a; width: 100%">
+      </label>
+      <button type="button" aria-label="Weather for Mariveles" style="width: 52px; height: 52px; border-radius: 14px; border: 0; background: #ffffff; display: grid; place-items: center; box-shadow: 0 1px 2px rgba(16,48,58,0.08), 0 6px 16px rgba(16,48,58,0.08)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0b6b75" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><path d="M3 8h10.5a2.5 2.5 0 1 0-2.5-2.5"></path><path d="M3 12.5h15.5a2.5 2.5 0 1 1-2.5 2.5"></path><path d="M3 17h7"></path></svg>
+      </button>
+    </div>
+    <div style="display: flex; gap: 8px; overflow: hidden">
+      <button type="button" aria-pressed="true" style="flex: none; height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid #f5a524; background: #f5a524; color: #10303a; font: inherit; font-size: 14px; font-weight: 700">Spots</button>
+      <button type="button" aria-pressed="false" style="flex: none; height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid #8c7e68; background: #ffffff; color: #10303a; font: inherit; font-size: 14px; font-weight: 600">Boats</button>
+      <button type="button" aria-pressed="false" style="flex: none; height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid #8c7e68; background: #ffffff; color: #10303a; font: inherit; font-size: 14px; font-weight: 600">Shore</button>
+      <button type="button" aria-pressed="false" style="flex: none; height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid #8c7e68; background: #ffffff; color: #10303a; font: inherit; font-size: 14px; font-weight: 600">Jigging</button>
+      <button type="button" aria-pressed="false" style="flex: none; height: 40px; padding: 0 14px; border-radius: 999px; border: 1.5px solid #8c7e68; background: #ffffff; color: #10303a; font: inherit; font-size: 14px; font-weight: 600">Fresh catch</button>
+    </div>
+  </div>
+
+  <div style="position: absolute; left: 186px; top: 338px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+    <div style="width: 40px; height: 40px; border-radius: 12px; background: #0b6b75; color: #ffffff; display: grid; place-items: center; border: 2.5px solid #ffffff; box-shadow: 0 1px 2px rgba(16,48,58,0.08), 0 6px 16px rgba(16,48,58,0.08)">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 13.5h17l-2.2 3.6a2 2 0 0 1-1.7.9H7.4a2 2 0 0 1-1.7-.9z"></path><path d="M1.5 10.5h7"></path><path d="M15.5 10.5h7"></path><path d="M12 13.5V4.5l4.5 6H12"></path></svg>
+    </div>
+    <span style="font-size: 12px; font-weight: 700; background: #ffffff; padding: 2px 8px; border-radius: 999px">Porto · 6 boats</span>
+  </div>
+
+  <div style="position: absolute; left: 92px; top: 368px; display: flex; flex-direction: column; align-items: center; gap: 4px">
+    <div style="width: 36px; height: 36px; border-radius: 50% 50% 50% 4px; transform: rotate(-45deg); background: #f5a524; border: 2.5px solid #ffffff; outline: 3px solid #10303a; outline-offset: 2px; display: grid; place-items: center">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10303a" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: rotate(45deg)"><path d="M3 12c3-4.5 9-6 14-2.5L21 7v10l-4-2.5C12 18 6 16.5 3 12z"></path></svg>
+    </div>
+    <span style="font-size: 12px; font-weight: 700; background: #ffffff; padding: 2px 8px; border-radius: 999px; margin-top: 4px">Sisiman seawall</span>
+  </div>
+
+  <div style="position: absolute; left: 228px; top: 488px; width: 96px; height: 96px; border-radius: 50%; background: rgba(11,107,117,0.14); border: 2px dashed #0b6b75; display: grid; place-items: center">
+    <span style="width: 10px; height: 10px; border-radius: 50%; background: #0b6b75"></span>
+  </div>
+  <span style="position: absolute; left: 238px; top: 576px; font-size: 12px; font-weight: 700; background: #ffffff; padding: 2px 8px; border-radius: 999px">Lusong area</span>
+
+  <div style="position: absolute; left: 44px; top: 494px; width: 36px; height: 36px; border-radius: 50% 50% 50% 4px; transform: rotate(-45deg); background: #e4573d; border: 2.5px solid #ffffff; box-shadow: 0 0 0 6px #fbddd4; display: grid; place-items: center">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="transform: rotate(45deg)"><path d="M12 21c-3.6 0-6-2.4-6-5.6c0-3.6 3.2-5.2 3.6-9.4c2.6 1.6 4 3.6 4.2 6c.8-.6 1.4-1.6 1.6-2.8c1.6 1.4 2.6 3.6 2.6 6.2c0 3.2-2.4 5.6-6 5.6z"></path></svg>
+  </div>
+
+  <div style="position: absolute; left: 330px; top: 404px; width: 36px; height: 36px; border-radius: 50% 50% 50% 4px; transform: rotate(-45deg); background: #0b6b75; border: 2.5px solid #ffffff; display: grid; place-items: center">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.1" stroke-linecap="round" aria-hidden="true" style="transform: rotate(45deg)"><circle cx="9" cy="8" r="3.2"></circle><path d="M3 19c.6-3.2 3-5 6-5s5.4 1.8 6 5"></path></svg>
+  </div>
+
+  <button type="button" style="position: absolute; right: 16px; top: 548px; height: 52px; padding: 0 20px; border-radius: 999px; border: 0; background: #f5a524; color: #10303a; font: inherit; font-size: 16px; font-weight: 700; display: flex; align-items: center; gap: 8px; box-shadow: 0 1px 2px rgba(16,48,58,0.08), 0 6px 16px rgba(16,48,58,0.12)">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#10303a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6.5v8a4.5 4.5 0 0 1-9 0v-3l2.6 2.6"></path><circle cx="15" cy="4.7" r="1.7"></circle></svg>
+    Pin this spot
+  </button>
+
+  <section aria-label="Selected spot" style="position: absolute; left: 0; right: 0; top: 612px; height: 156px; background: #ffffff; border-radius: 22px 22px 0 0; box-shadow: 0 -8px 24px rgba(16,48,58,0.12); padding: 10px 16px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px">
+    <div style="width: 40px; height: 4px; border-radius: 999px; background: #e3d7c3; align-self: center"></div>
+    <div style="display: flex; justify-content: space-between; align-items: center">
+      <h2 style="margin: 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-size: 20px; line-height: 26px; font-weight: 700">Sisiman Bay seawall</h2>
+      <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #fbddd4; color: #b33a22">Fresh catch</span>
+    </div>
+    <div style="font-size: 14px; color: #56676a">Mariveles · 4.2 km · 18 catches · shore casting, talakitok</div>
+    <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid #e3d7c3; padding-top: 8px">
+      <span style="display: inline-flex; align-items: center; gap: 6px; font-size: 14px; font-weight: 600; color: #0b6b75">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#0b6b75" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="8.5" stroke-dasharray="3 3"></circle></svg>
+        Approximate area · @kuyajun
+      </span>
+      <a href="Spot.dc.html" style="font-size: 14px; font-weight: 700; color: #0b6b75; text-decoration: none">Tingnan</a>
+    </div>
+  </section>
+
+  <nav aria-label="Main" style="position: absolute; left: 0; right: 0; bottom: 0; height: 76px; background: #ffffff; border-top: 1px solid #e3d7c3; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr))">
+    <a href="Main.dc.html" aria-current="page" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #10303a; font-size: 12px; font-weight: 700">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="#fdebc8" stroke="#10303a" stroke-width="1.9" stroke-linejoin="round" aria-hidden="true"><path d="M3 6.5l6-2.5 6 2.5 6-2.5v13.5l-6 2.5-6-2.5-6 2.5z"></path><path d="M9 4v13.5M15 6.5V20" fill="none"></path></svg>
+      Mapa
+    </a>
+    <a href="Boats.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #56676a; font-size: 12px; font-weight: 600">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#56676a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 13.5h17l-2.2 3.6a2 2 0 0 1-1.7.9H7.4a2 2 0 0 1-1.7-.9z"></path><path d="M1.5 10.5h7"></path><path d="M15.5 10.5h7"></path><path d="M12 13.5V4.5l4.5 6H12"></path></svg>
+      Bangka
+    </a>
+    <a href="Booked.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #56676a; font-size: 12px; font-weight: 600">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#56676a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"></rect><path d="M4 10h16M9 3v4M15 3v4"></path></svg>
+      Trips
+    </a>
+    <a href="Main.dc.html" style="display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; text-decoration: none; color: #56676a; font-size: 12px; font-weight: 600">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#56676a" stroke-width="1.9" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="8.5" r="3.8"></circle><path d="M4.5 20c.9-3.8 3.9-6 7.5-6s6.6 2.2 7.5 6"></path></svg>
+      Ako
+    </a>
+  </nav>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>
