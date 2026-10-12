@@ -69,7 +69,8 @@ at least 14 px with a halo.
 | --- | --- |
 | Database tests (local Postgres 16 + PostGIS + pgTAP) | `PGHOST=/tmp PGPORT=54329 PGUSER=postgres scripts/db/test-local.sh` |
 | Database tests (Docker) | `npx supabase start && npx supabase test db` |
-| App | see README |
+| App checks | `npm run typecheck && npm run lint && npm test` |
+| App on a phone | `npx expo run:android` (development build, not Expo Go) |
 
 ## Before you merge
 
