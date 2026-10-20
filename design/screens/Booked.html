@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="tl">
+<head>
+<meta charset="utf-8">
+<title>Booked na</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&amp;family=Figtree:wght@400;600;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#0b6b75}a:hover{color:#10303a}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; position: relative; overflow: hidden; background: #fbf6ec; font-family: Figtree, system-ui, sans-serif; color: #10303a">
+  <div style="padding: 32px 16px 0; display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+    <img src="/_blob/1a81135d22530985f04a6e814e49b08c" alt="Kap Lapu smiling" style="width: 168px; height: 135px">
+    <h1 style="margin: 8px 0 0; font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-size: 34px; line-height: 38px; font-weight: 800; letter-spacing: -0.5px">Booked na!</h1>
+    <p style="margin: 0; font-size: 16px; line-height: 24px; max-width: 300px">Kita kits sa Porto, Brgy. Balon. Nandoon na ang bangka by 4:45 AM.</p>
+  </div>
+
+  <div style="margin: 20px 16px 0; background: #ffffff; border-radius: 22px; padding: 16px; display: flex; flex-direction: column; gap: 12px; box-shadow: 0 1px 2px rgba(16,48,58,0.08), 0 6px 16px rgba(16,48,58,0.08)">
+    <div style="display: flex; justify-content: space-between; align-items: flex-start">
+      <div>
+        <b style="font-family: 'Bricolage Grotesque', Figtree, sans-serif; font-size: 20px">Bangka Tala</b>
+        <div style="font-size: 14px; color: #56676a">Group jigging trip · 2 seats</div>
+      </div>
+      <span style="display: inline-flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; padding: 4px 10px; border-radius: 999px; background: #d6edec; color: #0b6b75">Confirmed</span>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px">
+      <div style="background: #f2e9d8; border-radius: 14px; padding: 10px 12px"><span style="font-size: 13px; color: #56676a">Kailan</span><br><b style="font-size: 15px">Sab 14 Nov, 5:00 AM</b></div>
+      <div style="background: #f2e9d8; border-radius: 14px; padding: 10px 12px"><span style="font-size: 13px; color: #56676a">Bayad na</span><br><b style="font-size: 15px">₱70 via GCash</b></div>
+      <div style="background: #f2e9d8; border-radius: 14px; padding: 10px 12px"><span style="font-size: 13px; color: #56676a">Sa bangka</span><br><b style="font-size: 15px">₱700 cash or GCash</b></div>
+      <div style="background: #f2e9d8; border-radius: 14px; padding: 10px 12px"><span style="font-size: 13px; color: #56676a">Kapitan</span><br><b style="font-size: 15px">Kuya Ramon</b></div>
+    </div>
+    <div style="display: flex; gap: 8px">
+      <button type="button" style="flex: 1; height: 48px; border-radius: 14px; border: 0; background: #0b6b75; color: #ffffff; font: inherit; font-size: 15px; font-weight: 700">Message Kuya Ramon</button>
+      <button type="button" style="flex: 1; height: 48px; border-radius: 14px; border: 1.5px solid #8c7e68; background: #ffffff; color: #10303a; font: inherit; font-size: 15px; font-weight: 700">Call</button>
+    </div>
+  </div>
+
+  <div style="margin: 12px 16px 0; background: #ffffff; border-radius: 22px; padding: 14px 16px; display: flex; flex-direction: column; gap: 8px">
+    <b style="font-size: 15px">Bago umalis</b>
+    <label style="display: flex; gap: 10px; align-items: center; font-size: 15px; min-height: 32px"><input type="checkbox" style="width: 20px; height: 20px; margin: 0; accent-color: #0b6b75">Share trip details with family</label>
+    <label style="display: flex; gap: 10px; align-items: center; font-size: 15px; min-height: 32px"><input type="checkbox" checked style="width: 20px; height: 20px; margin: 0; accent-color: #0b6b75">Bring a valid ID for the Coast Guard manifest</label>
+    <span style="font-size: 12px; color: #56676a">We check the weather 24 h and 3 h before you leave. Free reschedule if it turns bad.</span>
+  </div>
+
+  <div style="position: absolute; left: 16px; right: 16px; bottom: 20px">
+    <a href="Main.dc.html" style="display: flex; align-items: center; justify-content: center; height: 52px; border-radius: 14px; border: 1.5px solid #8c7e68; background: #ffffff; color: #10303a; font-size: 16px; font-weight: 700; text-decoration: none">Hanap ng spot malapit sa Porto</a>
+  </div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

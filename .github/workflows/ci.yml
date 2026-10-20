@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  app:
+    name: App (typecheck, lint, unit tests)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test -- --ci
+
+  database:
+    name: Database rules (pgTAP)
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install Postgres 16, PostGIS and pgTAP
+        run: |
+          sudo apt-get update -q
+          sudo apt-get install -y -q postgresql-16 postgresql-16-postgis-3 postgresql-16-pgtap libtap-parser-sourcehandler-pgtap-perl
+
+      - name: Start a throwaway cluster
+        run: |
+          sudo -u postgres /usr/lib/postgresql/16/bin/initdb -D /tmp/pgdata -A trust -U postgres
+          sudo -u postgres /usr/lib/postgresql/16/bin/pg_ctl -D /tmp/pgdata -o "-p 54329 -k /tmp" -l /tmp/pg.log start
+
+      - name: Run migrations and tests
+        env:
+          PGHOST: /tmp
+          PGPORT: "54329"
+          PGUSER: postgres
+        run: scripts/db/test-local.sh
